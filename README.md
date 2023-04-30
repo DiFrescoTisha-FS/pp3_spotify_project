@@ -1,38 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Spotify Search App</br>
+
+## Project Overview:
+
+#### The Spotify Search App is a web application that allows users to search for an artist, album, or song through the Spotify API. You must have a Spotify account to log in and access their media. Once a search query has been entered into the search bar, the user is redirected to the search results page where they can view and listen to what they searched. This project employs MongoDB (database) in order to track and keep up with OAuth JSON web tokens.
+
+----
+
+## Prerequisites:
+
+* MongoDB >= 5.1
+* NodeJS >= v16.13.0
+* npm >= v8.1.0
+* Yarn >= v1.22.19
+* Chrome/Firefox/Safari/Edge >= Latest 2 major versions
+
+---
+
+## Technologies:
+
+* MongoDB
+* Next js
+* Tailwind
+* NodeJS
+* Spotify API
+
+---
 
 ## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+    
+ #### You must have a ```.env``` file to run the application. This file allows sensitive information, such as user credentials, to be stored in a local environment. This file should be added to a ```.gitignore``` file so that it is not uploaded to code repositories online for everyone to read. This can be achieved by making a copy of the ```.env.dist``` file and change the name to ```.env``` by running the following command in terminal:
+ ```javascript
+cp .env.dist .env && vim .env
 ```
+#### Next, you must add your own environment variables inside the file.
+#### The next step is to add the dependencies (node modules) by running the following command:
+```javascript 
+npm install
+```
+#### Once all dependencies have been installed, you can run the project. You must open two terminal windows, one for the frontend and one for the backend.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## To Run Next.js 
+```javascript
+npm run dev
+```
+---
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Links
+#### Links to the project include the following:
+* <http://localhost:3000> - Link to Nextjs base url on which Spotify application runs.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+* 
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
