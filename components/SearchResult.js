@@ -45,10 +45,14 @@ function SearchResult({ searchResults }) {
               )}
               {result.external_urls && (
                 <p className="text-gray-500">
-                  <Link href={result.external_urls.spotify} passHref>
-                    <a target="_blank" rel="noopener noreferrer">
+                  <Link
+                    href={result.external_urls.spotify}
+                    passHref
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    
                       Open on Spotify
-                    </a>
+                    
                   </Link>
                 </p>
               )}
