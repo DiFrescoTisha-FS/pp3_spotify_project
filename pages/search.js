@@ -1,17 +1,14 @@
-import SearchForm from '@component/components/SearchForm';
-import SearchResult from '@component/components/SearchResult';
-import { useSession } from 'next-auth/react';
-import { useState } from 'react';
-import { useRouter } from 'next/router';
-import Link from 'next/link';
+import SearchForm from "@component/components/SearchForm";
+import SearchResult from "@component/components/SearchResult";
+import { useSession } from "next-auth/react";
+import { useState } from "react";
 
 export default function Search() {
   const { data: session, status } = useSession();
-  const [searchTerm, setSearchTerm] = useState('');
-  const [searchType, setSearchType] = useState('playlist');
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchType, setSearchType] = useState("artist");
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
 
   const handleSearch = async () => {
     setLoading(true);
@@ -20,17 +17,14 @@ export default function Search() {
         `https://api.spotify.com/v1/search?query=${searchTerm}&type=${searchType}&limit=10`,
         {
           headers: {
-            'Content-type': 'application/json',
-            Accept: 'application/json',
-            Authorization: `Bearer ${session?.accessToken || ''}`,
+            "Content-type": "application/json",
+            Accept: "application/json",
+            Authorization: `Bearer ${session?.accessToken || ""}`,
           },
         }
       );
       const data = await response.json();
-      setSearchResults(data[searchType + 's'].items.map((item) => ({
-        ...item,
-        external_url: item.external_urls?.spotify || '',
-      })));
+      setSearchResults(data[searchType + "s"].items);
       setLoading(false);
     } catch (error) {
       console.error(error);
@@ -51,13 +45,8 @@ export default function Search() {
     handleSearch();
   };
 
-  if (status === 'loading') {
+  if (status === "loading") {
     return <p>Loading...</p>;
-  }
-
-  if (!session) {
-    router.push('/login');
-    return null;
   }
 
   return (

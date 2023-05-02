@@ -57,7 +57,7 @@ export default function SearchForm({
           >
             <option value="artist">Artists</option>
             <option value="album">Albums</option>
-            <option value="track">Tracks</option>
+            <option value="playlist">Playlists</option>
           </select>    
 
 {searchResults?.length === 0 && (

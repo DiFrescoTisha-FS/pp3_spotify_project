@@ -10,7 +10,7 @@ function Login({ providers }) {
   return (
     <div >
       <div className="loginpage">
-      <Image src={logocircle} alt="Spotify logo" className="login_logo" />
+      <Image src={logocircle} alt="Spotify logo" className="login_logo" priority={true} />
       
       {Object.values(providers).map((provider) => (
         <div key={provider.id}>
