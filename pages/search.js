@@ -6,7 +6,7 @@ import { useState } from "react";
 export default function Search() {
   const { data: session, status } = useSession();
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchType, setSearchType] = useState("playlist"); // Update searchType to "playlist"
+  const [searchType, setSearchType] = useState("artist");
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
 

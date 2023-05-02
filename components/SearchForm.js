@@ -1,15 +1,31 @@
+import React from "react";
 import Navbar from "./Navbar";
+import { useState, useEffect } from "react";
+import { shuffle } from "lodash";
+
+const colors = [
+  "from-indigo-500",
+  "from-blue-500",
+  "from-green-500",
+  "from-red-500",
+  "from-yellow-500",
+  "from-pink-500",
+  "from-purple-500",
+];
 
 export default function SearchForm({
-    searchTerm,
-    searchType,
-    onSearchTermChange,
-    onSearchTypeChange,
-    onSearchSubmit,
-    searchResults,
-    }) 
-{
+  searchTerm,
+  searchType,
+  onSearchTermChange,
+  onSearchTypeChange,
+  onSearchSubmit,
+  searchResults,
+}) {
+  const [color, setColor] = useState(null);
 
+  useEffect(() => {
+    setColor(shuffle(colors).pop());
+  }, []);
 
   return (
     <div className="">
@@ -41,13 +57,16 @@ export default function SearchForm({
           >
             <option value="artist">Artists</option>
             <option value="album">Albums</option>
-            <option value="playlist">Playlist</option>
+            <option value="track">Tracks</option>
           </select>    
-            {searchResults?.length === 0 && (
-                <div className="text-white text-center">
-                    No results found for `${searchTerm}`.
-                </div>
-            )}
+
+{searchResults?.length === 0 && (
+  <div className="text-white text-center">
+    No results found for `${searchTerm}`.
+  </div>
+)}
+
+
           <button type="submit" className="btn">
             Search
           </button>

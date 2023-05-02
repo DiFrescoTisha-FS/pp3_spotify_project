@@ -17,7 +17,7 @@ const colors = [
 ];
 
 function Navbar() {
-  const router = useRouter();
+  const router = useRouter(); // Add useRouter
   const { data: session, loading } = useSession();
   const [color, setColor] = useState(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
