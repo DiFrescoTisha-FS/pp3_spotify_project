@@ -45,7 +45,7 @@ function Navbar() {
 
   return (
     <nav className={`top-2 flex justify-between items-start space bg-gradient-to-b to-black ${color} h-40 text-[#E4E4E7] p-8 w-full`}>
-      <Image src={logo} alt="spotify logo" className="w-28 flex flex-row justify-between mb-6" priority={true} />
+      <Image src={logo} alt="spotify logo" className="w-36 flex flex-row justify-between mb-6" priority={true} />
 
       <ul className={`main-nav ${!session && loading ? 'loading' : 'loaded'}`}>
         <li className="top-5">

@@ -1,17 +1,5 @@
-import React from "react";
 import Navbar from "./Navbar";
-import { useState, useEffect } from "react";
-import { shuffle } from "lodash";
-
-const colors = [
-  "from-indigo-500",
-  "from-blue-500",
-  "from-green-500",
-  "from-red-500",
-  "from-yellow-500",
-  "from-pink-500",
-  "from-purple-500",
-];
+import { Cursor, useTypewriter } from "react-simple-typewriter"
 
 export default function SearchForm({
   searchTerm,
@@ -21,59 +9,62 @@ export default function SearchForm({
   onSearchSubmit,
   searchResults,
 }) {
-  const [color, setColor] = useState(null);
-
-  useEffect(() => {
-    setColor(shuffle(colors).pop());
-  }, []);
+  const [text, count] = useTypewriter({
+    words: ["Spotify Search"],
+    loop: true,
+    delaySpeed: 5000,
+  });
 
   return (
     <div className="">
       <Navbar />
-      <div className="container w-full flex justify-end items-center m-10">
-        <form
-          onSubmit={onSearchSubmit}
-          className="text-white grid lg:grid-cols-3 md:grid-cols-2 gap-10 m-10 p-5 mx-auto my-10 w-[100%] p-[75px 5px 5px 5px] bg-black justify-items-end"
-        >
-          <label htmlFor="search-term" className="sr-only">
-            Search:
-          </label>
-          <input
-            type="text"
-            id="search-term"
-            value={searchTerm}
-            onChange={onSearchTermChange}
-            placeholder="Enter search term"
-            className="input text-white"
-          />
-          <label htmlFor="search-type" className="sr-only">
-            Search for:
-          </label>
-          <select
-            id="search-type"
-            value={searchType}
-            onChange={onSearchTypeChange}
-            className="option_button block w-full p-2 rounded-md shadow-sm"
+      <div className="h-screen flex flex-col mx-20 items-center justify-center text-center overflow-hidden text-white">
+        <div className="z-20">
+          <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
+            Artist Album Playlist
+          </h2>
+          <h1 className="text-5xl lg:text-6xl font-semibold px-10">
+            <span className="mr-3">{text}</span>
+            <Cursor cursorColor="#f7abba" />
+          </h1>
+        </div>
+
+        <div className="w-full flex justify-evenly mt-16 items-center">
+          <form
+            onSubmit={onSearchSubmit}
+            className="form text-black flex flex-col md:flex-row md:space-x-4 m-10 mt-6 p-5 mx-auto w-[100%] p-[75px 5px 5px 5px] bg-black"
           >
-            <option value="artist">Artists</option>
-            <option value="album">Albums</option>
-            <option value="playlist">Playlists</option>
-          </select>    
-
-{searchResults?.length === 0 && (
-  <div className="text-white text-center">
-    No results found for `${searchTerm}`.
-  </div>
-)}
-
-
-          <button type="submit" className="btn">
-            Search
-          </button>
-        </form>
+            <label htmlFor="search-term" className="sr-only">
+              Search:
+            </label>
+            <input
+              type="text"
+              id="search-term"
+              value={searchTerm}
+              onChange={onSearchTermChange}
+              placeholder="Enter search term"
+              className="input text-white lg:w-1/3 justify-evenly mr-12" 
+            />
+            <label htmlFor="search-type" className="sr-only">
+              Search for:
+            </label>
+            <select
+              id="search-type"
+              value={searchType}
+              onChange={onSearchTypeChange}
+              className="option_button block w-full lg:w-1/3 p-2 rounded-md shadow-sm"
+            >
+              <option value="artist">Artists</option>
+              <option value="album">Albums</option>
+              <option value="playlist">Playlists</option>
+            </select>
+            <button type="submit" className="btn lg:w-1/4">
+              Search
+            </button>
+          </form>
+        </div>
       </div>
-
-
     </div>
   );
 }
+
