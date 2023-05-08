@@ -1,11 +1,13 @@
 export default function SearchResult({ searchResults }) {
   return (
-    <div className="container-md flex flex-wrap justify-center mx-10 gap-6">
+    <div className="container-md flex flex-wrap justify-center mx-10 gap-10">
       {searchResults.length === 0 ? null : (
         searchResults.map((result) => (
-          <div key={result.id} className="card flex flex-col text-xs items-center h-48 max-w-[200px] border border-gray-300 rounded-lg">
+          <div key={result.id} className="card">
             {result.images && result.images.length > 0 && (
-              <img src={result.images[0].url} alt={result.name} className="h-32 w-32 object-cover rounded-t-lg" />
+              <a href={result.external_urls.spotify}>
+                <img src={result.images[0].url} alt={result.name} className="h-[200px] w-[200px] object-cover rounded-t-lg" />
+              </a>
             )}
             <div className="p-2">
               {result.type === "artist" ? (

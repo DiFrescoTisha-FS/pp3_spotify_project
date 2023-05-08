@@ -31,7 +31,7 @@ export default function SearchForm({
       <div className="h-screen flex flex-col mx-20 items-center justify-center text-center overflow-hidden text-white">
         <div className="z-20">
           <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
-            Album *  Artist * Playlist
+            Album * Artist * Playlist
           </h2>
           <h1 className="text-5xl lg:text-6xl font-semibold px-10">
             <span className="mr-3">{text}</span>
@@ -56,44 +56,33 @@ export default function SearchForm({
               className="input text-white lg:w-1/3 justify-evenly mr-12"
             />
 <select 
-  defaultValue={null}
-  id="search-type"
+  value={searchType}
   onChange={onSearchTypeChange}
   className="option_button block w-full lg:w-1/3 p-2 rounded-md shadow-sm"
 >
-  <option value="">Select a Category</option>
   <option value="artist">Artist</option>
   <option value="album">Album</option>
   <option value="playlist">Playlist</option>
 </select>
+
 
             <button type="submit" className="btn lg:w-1/4">
               Search
             </button>
           </form>
         </div>
-        {searchTerm && (!searchType || searchType === '') ? (
+        {!searchTerm ? (
   <h2 className="text-sm text-white">
-    Please select a category
+    No Results Found
   </h2>
-) : searchTerm && searchType && searchResults && searchResults.length > 0 ? (
+  ) : searchTerm && searchType ? (
   <>
     <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
-      {searchType.charAt(0).toUpperCase() + searchType.slice(1)}:{" "}
-      {searchTerm}: {resultTitle}
+      {resultTitle}: {searchTerm}
     </h2>
-    <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
-  `${resultTitle}: ${searchTerm}`
-</h2>
-
     {/* Display the search results here */}
   </>
-) : (
-  <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
-            {/* {resultTitle || "Search"} */}
-          </h2>
-)}
-
+) : null } 
         <hr className="line" />
       </div>
     </div>
