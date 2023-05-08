@@ -2,26 +2,143 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
+html,
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: black;
+  padding: 0;
+  margin: 0;
 }
+
+h1 {
+  color: #000;
+  text-shadow: 0px 1px 2px rgba(0,255,255,0.5), 
+  0px 2px 4px rgba(0,255,255,0.5), 
+  0px 4px 8px rgba(0,255,255,0.5), 
+  0px 8px 16px rgba(0,255,255,0.5);
+}
+
+ /* @import url("https://heroicons.com/outline.css");
+
+/* Import Next.js session CSS (assuming it's already imported in the main CSS file) */
+/* @import url("next-auth.css"); */
+
+/* Define the colors */
+section {
+  transition: background-color 0.3s ease;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginpage{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+input {
+  color: none;
+  margin-right: 200px;
+}
+
+.input, .option_button, .btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  display: flex;
+  margin-right: 200px;
+  justify-content: space-between;
+  gap: 30px;
+  color: #fff;
+  background: #0f0f0f;
+  font-size: 15px;
+  box-shadow: 0px 1px 2px rgba(0,255,255,0.5), 
+              0px 2px 4px rgba(0,255,255,0.5), 
+              0px 4px 8px rgba(0,255,255,0.5), 
+              0px 8px 16px rgba(0,255,255,0.5);
+  border-radius: 5px;
+}
+
+input::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+input:focus {
+  background: #0f0f0f;
+}
+
+input.visited {
+  background: #0f0f0f;
+}
+
+.btn {
+  width: 25%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #0f0f0f;
+  font-size: 15px;
+  box-shadow: 0px 1px 2px rgba(0,255,255,0.5), 
+              0px 2px 4px rgba(0,255,255,0.5), 
+              0px 4px 8px rgba(0,255,255,0.5), 
+              0px 8px 16px rgba(0,255,255,0.5);
+  border-radius: 5px;
+}
+
+
+.card {
+  /* grid-column: 4; */
+  gap: 10;
+  max-width: 100%;
+  width: 800px;
+  border: none;
+  outline: none;
+  color: #fff;
+  margin-top: 0;
+  background: #0f0f0f;
+  font-size: 15px;
+  box-shadow: 0px 1px 2px rgba(0,255,255,0.5), 
+              0px 2px 4px rgba(0,255,255,0.5), 
+              0px 4px 8px rgba(0,255,255,0.5), 
+              0px 8px 16px rgba(0,255,255,0.5);
+  border-radius: 5px;
+} 
+
+.spotify_logo {
+  display: flex;
+  flex-direction: column;
+  width:400px;
+}
+
+.button {
+  /* display: flex; */
+  position: absolute;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button_signin {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.loginpage{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+
