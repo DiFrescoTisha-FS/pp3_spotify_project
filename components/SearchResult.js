@@ -1,6 +1,6 @@
 export default function SearchResult({ searchResults }) {
   return (
-    <div className="container-md flex flex-wrap justify-center mx-10 gap-10">
+    <div className="container-md flex flex-wrap justify-center mx-10 gap-10 mt-neg-40">
       {searchResults.length === 0 ? null : (
         searchResults.map((result) => (
           <div key={result.id} className="card">

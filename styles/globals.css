@@ -7,6 +7,36 @@ body {
   background-color: black;
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background: #160053;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-bar {
+  background: #fff;
+  width: 90%;
+  max-width: 800px;
+  display: flex;
+  padding: 2px;
+  border-radius: 4px;
+}
+
+#select {
+  background: #160053;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  width: 300px;
+  padding: 25px 20px;
+  cursor: pointer;
 }
 
 h1 {
@@ -15,16 +45,6 @@ h1 {
   0px 2px 4px rgba(0,255,255,0.5), 
   0px 4px 8px rgba(0,255,255,0.5), 
   0px 8px 16px rgba(0,255,255,0.5);
-}
-
- /* @import url("https://heroicons.com/outline.css");
-
-/* Import Next.js session CSS (assuming it's already imported in the main CSS file) */
-/* @import url("next-auth.css"); */
-
-/* Define the colors */
-section {
-  transition: background-color 0.3s ease;
 }
 
 .logo {
@@ -46,15 +66,15 @@ input {
   margin-right: 200px;
 }
 
-.input, .option_button, .btn {
-  width: 100%;
-  padding: 10px;
+form {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.input, .option_button{
   border: none;
   outline: none;
-  display: flex;
-  margin-right: 200px;
-  justify-content: space-between;
-  gap: 30px;
   color: #fff;
   background: #0f0f0f;
   font-size: 15px;
@@ -62,47 +82,34 @@ input {
               0px 2px 4px rgba(0,255,255,0.5), 
               0px 4px 8px rgba(0,255,255,0.5), 
               0px 8px 16px rgba(0,255,255,0.5);
-  border-radius: 5px;
 }
 
-input::placeholder {
-  color: white;
-  opacity: 1;
+.btn, .button, #search-dropdown {
+  border: none;
+  outline: none;
+  background: #0f0f0f;
+  font-size: 15px;
+  box-shadow: 0px 1px 2px rgba(0,255,255,0.5), 
+              0px 2px 4px rgba(0,255,255,0.5), 
+              0px 4px 8px rgba(0,255,255,0.5), 
+              0px 8px 16px rgba(0,255,255,0.5);
 }
 
 input:focus {
   background: #0f0f0f;
-}
-
-input.visited {
-  background: #0f0f0f;
-}
-
-.btn {
-  width: 25%;
-  padding: 10px;
-  border: none;
-  outline: none;
-  color: #fff;
-  background: #0f0f0f;
   font-size: 15px;
-  box-shadow: 0px 1px 2px rgba(0,255,255,0.5), 
-              0px 2px 4px rgba(0,255,255,0.5), 
-              0px 4px 8px rgba(0,255,255,0.5), 
-              0px 8px 16px rgba(0,255,255,0.5);
-  border-radius: 5px;
+  color: rgb(128, 128, 128);
 }
-
 
 .card {
-  /* grid-column: 4; */
-  gap: 10;
   max-width: 100%;
-  width: 800px;
+  width: 200px;
   border: none;
   outline: none;
   color: #fff;
   margin-top: 0;
+  margin: 0;
+  padding:0;
   background: #0f0f0f;
   font-size: 15px;
   box-shadow: 0px 1px 2px rgba(0,255,255,0.5), 
@@ -116,13 +123,6 @@ input.visited {
   display: flex;
   flex-direction: column;
   width:400px;
-}
-
-.button {
-  /* display: flex; */
-  position: absolute;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .button_signin {
@@ -140,5 +140,26 @@ input.visited {
   height: 100vh;
 }
 
+.line {
+  width: 100%;
+  font-weight: 4px;
+  border: 1px solid black;
+  /* color: #000; */
+  background-color: #000;
+  outline: 1px solid black;
+  margin-top: none;
+  box-shadow: 0px 1px 2px rgba(0,255,255,0.5), 
+  0px 2px 4px rgba(0,255,255,0.5), 
+  0px 4px 8px rgba(0,255,255,0.5), 
+  0px 8px 16px rgba(0,255,255,0.5);
+}
+
+.results {
+  color: #000;
+  text-shadow: 0px 1px 2px rgba(0,255,255,0.5), 
+  0px 2px 4px rgba(0,255,255,0.5), 
+  0px 4px 8px rgba(0,255,255,0.5), 
+  0px 8px 16px rgba(0,255,255,0.5);
+}
 
 

@@ -1,17 +1,21 @@
-import SearchForm from '@component/components/SearchForm';
+import Searchbar from '@component/components/Searchbar';
 import SearchResult from '@component/components/SearchResult';
 import { useSession } from 'next-auth/react';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Footer from '@component/components/Footer';
 
-export default function Search() {
+export default function Search1() {
   const { data: session, status } = useSession();
   const [searchTerm, setSearchTerm] = useState('');
   const [searchType, setSearchType] = useState('playlist');
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+
+  const setSearchTypeChange = (value) => {
+    setSearchType(value);
+  };
 
   const handleSearch = async () => {
     setLoading(true);
@@ -69,13 +73,15 @@ export default function Search() {
 
   return (
     <div className="">
-      <SearchForm
+      <Searchbar
         searchTerm={searchTerm}
         searchType={searchType}
+        setSearchTypeChange={setSearchTypeChange}
         onSearchTermChange={handleSearchTermChange}
         onSearchTypeChange={handleSearchTypeChange}
         onSearchSubmit={handleSearchSubmit}
       />
+      
       {loading ? (
         <p>Loading...</p>
       ) : (

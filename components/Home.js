@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SearchForm from "./SearchForm";
+import Searchbar from "./Searchbar";
 import SearchResult from "./SearchResult";
 
 const Home = () => {
@@ -31,7 +31,7 @@ const Home = () => {
 
   return (
     <div>
-      <SearchForm
+      <Searchbar
         searchTerm={searchTerm}
         searchType={searchType}
         onSearchTermChange={handleSearchTermChange}

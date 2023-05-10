@@ -2,13 +2,14 @@
 
 ## Project Overview:
 
-#### The Spotify Search App is a web application that allows users to search for an artist, album, or song through the Spotify API. You must have a Spotify account to log in and access their media. Once a search query has been entered into the search bar, the user is redirected to the search results page where they can view and listen to what they searched. This project employs MongoDB (database) in order to track and keep up with OAuth JSON web tokens.
+#### The Spotify Search App is a web application that allows users to search for an artist, album, or playlist through the Spotify API. You must have a Spotify account to log in and access their media. Once a search term has been entered into the input field and chooses the category they want to search from the drop down button, the the search results will be displayed. The user will also be able to click on the thumbnail and be redirected to the Spotify website where they can listen to their selection. This project employs MongoDB (database) in order to track and keep up with OAuth JSON web tokens.
 
 ----
 
 ## Prerequisites:
 
 * MongoDB >= 5.1
+* @next-auth/mongodb-adapter>= v1.1.3
 * NodeJS >= v16.13.0
 * npm >= v8.1.0
 * Yarn >= v1.22.19
@@ -19,8 +20,11 @@
 ## Technologies:
 
 * MongoDB
-* Next js
-* Tailwind
+* Next-Auth MongoDB Adapter
+* Next.js
+* Next-Auth
+* React
+* TailwindCSS
 * NodeJS
 * Spotify API
 
@@ -28,7 +32,7 @@
 
 ## Getting Started
     
- #### You must have a ```.env``` file to run the application. This file allows sensitive information, such as user credentials, to be stored in a local environment. This file should be added to a ```.gitignore``` file so that it is not uploaded to code repositories online for everyone to read. This can be achieved by making a copy of the ```.env.dist``` file and change the name to ```.env``` by running the following command in terminal:
+ #### You must have a ```.env.local``` file to run the application. This file allows sensitive information, such as user credentials, to be stored in a local environment. This file should be added to a ```.gitignore``` file so that it is not uploaded to code repositories online for everyone to read. This can be achieved by making a copy of the ```.env.dist``` file and change the name to ```.env.local``` by running the following command in terminal:
  ```javascript
 cp .env.dist .env && vim .env
 ```
@@ -37,7 +41,7 @@ cp .env.dist .env && vim .env
 ```javascript 
 npm install
 ```
-#### Once all dependencies have been installed, you can run the project. You must open two terminal windows, one for the frontend and one for the backend.
+#### Once all dependencies have been installed, you can run the project.
 
 ## To Run Next.js 
 ```javascript
@@ -49,6 +53,9 @@ npm run dev
 #### Links to the project include the following:
 * <http://localhost:3000> - Link to Nextjs base url on which Spotify application runs.
 
-* 
+| Route | Description |
+| ----- | ----- |
+| /api/auth/signin | Sign in to Spotify |
+| /api/search?q= | Search for artists, albums, and tracks |
 
 
