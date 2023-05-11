@@ -84,10 +84,6 @@ input:focus {
   color: #0f0f0f;
 }
 
-.placeholder {
-  padding-left: 4px;
-}
-
 .card {
   max-width: 100%;
   width: 200px;
