@@ -11,6 +11,7 @@
 * MongoDB >= 5.1
 * @next-auth/mongodb-adapter>= v1.1.3
 * NodeJS >= v16.13.0
+
 * npm >= v8.1.0
 * Yarn >= v1.22.19
 * Chrome/Firefox/Safari/Edge >= Latest 2 major versions
@@ -59,5 +60,8 @@ npm run dev
 | /login               | Authorized login                                                 |
 | /search              | Search for artist, album, and playlist.                          |
 
+<img width="1792" alt="Screenshot 2023-05-11 at 11 32 08 AM" src="https://github.com/DiFrescoTisha-FS/pp3_spotify_project/assets/81319127/bba44d97-2926-421c-b062-d2ff8f93a460">
 
+<img width="1816" alt="Screenshot 2023-05-11 at 11 32 30 AM" src="https://github.com/DiFrescoTisha-FS/pp3_spotify_project/assets/81319127/53db7757-4bdc-4064-813a-0419a36793a6">
 
+<img width="1792" alt="Screenshot 2023-05-11 at 11 32 53 AM" src="https://github.com/DiFrescoTisha-FS/pp3_spotify_project/assets/81319127/c465688d-c9dc-466a-944a-8c4f97db0f38">
