@@ -1,4 +1,4 @@
-import SearchForm from '@component/components/SearchForm';
+import Searchbar from '@component/components/SearchForm';
 import SearchResult from '@component/components/SearchResult';
 import { useSession } from 'next-auth/react';
 import { useState } from 'react';
@@ -12,6 +12,10 @@ export default function Search() {
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+
+  const setSearchTypeChange = (value) => {
+    setSearchType(value);
+  };
 
   const handleSearch = async () => {
     setLoading(true);
@@ -45,7 +49,7 @@ export default function Search() {
     setSearchTerm(value);
 
     if (value === '') {
-      setSearchResults([]); // Clear search results when the search term becomes empty
+      setSearchResults(null); // Set searchResults to null when the search term becomes empty
     }
   };
 
@@ -68,24 +72,27 @@ export default function Search() {
   }
 
   return (
-    <div>
-      <SearchForm
+    <div className="flex flex-col h-screen">
+      <Searchbar
         searchTerm={searchTerm}
         searchType={searchType}
+        setSearchTypeChange={setSearchTypeChange}
         onSearchTermChange={handleSearchTermChange}
         onSearchTypeChange={handleSearchTypeChange}
         onSearchSubmit={handleSearchSubmit}
       />
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <SearchResult searchResults={searchResults} />
-      )}
-      {searchResults === null && (
-        <p>No results found for {searchTerm}.</p>
-      )}    
-      <Footer className="text-center" />
+      <div className="flex-grow flex-shrink">
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+          <>
+            {searchResults && (
+              <SearchResult searchResults={searchResults} className="mt-6" />
+            )}
+          </>
+        )}
+      </div>
+      <Footer />
     </div>
-
   );
 }
