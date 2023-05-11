@@ -44,7 +44,7 @@ function Navbar() {
   }, [loading, session, router]);
 
   return (
-    <nav className={`top-4 flex justify-between items-start space bg-gradient-to-b to-black ${color} h-55 text-[#E4E4E7] p-8 w-full`}>
+    <nav className={`top-4 flex justify-between items-start space bg-gradient-to-b to-black ${color} h-60 text-[#E4E4E7] p-8 w-full`}>
       <Image src={logo} alt="spotify logo" className="w-[200px] flex flex-row justify-between mb-10" priority={true} />
 
       <ul className={`main-nav ${!session && loading ? 'loading' : 'loaded'}`}>
