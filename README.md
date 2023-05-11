@@ -59,6 +59,8 @@ npm run dev
 | /api/auth/signin     | Sign in to Spotify for authorization.                             |
 | /login               | Authorized login                                                 |
 | /search              | Search for artist, album, and playlist.                          |
+</br >
+# Images
 
-<img width="1792" alt="Screenshot 2023-05-11 at 6 55 00 PM" src="https://github.com/DiFrescoTisha-FS/pp3_spotify_project/assets/81319127/d040b743-67d3-4f99-8994-6cf969c3239e">
+<img width="504" alt="Screenshot 2023-05-11 at 7 17 42 PM" src="https://github.com/DiFrescoTisha-FS/pp3_spotify_project/assets/81319127/9b163047-3b6f-4cd7-9511-0e2d8fc8e17a">
 
