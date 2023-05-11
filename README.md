@@ -51,11 +51,13 @@ npm run dev
 
 ## Links
 #### Links to the project include the following:
-* <http://localhost:3000> - Link to Nextjs base url on which Spotify application runs.
 
-| Route | Description |
-| ----- | ----- |
-| /api/auth/signin | Sign in to Spotify |
-| /api/search?q= | Search for artists, albums, and tracks |
+| Route                | Description                                                      |
+|----------------------|------------------------------------------------------------------|
+| http://localhost:3000 | Link to Next.js base URL that Spotify application runs on.       |
+| /api/auth/signin     | Sign in to Spotify for authorization.                             |
+| /login               | Authorized login                                                 |
+| /search              | Search for artist, album, and playlist.                          |
+
 
 
