@@ -72,7 +72,7 @@ export default function Search1() {
   }
 
   return (
-    <div className="">
+    <div className="flex flex-col h-screen">
       <Searchbar
         searchTerm={searchTerm}
         searchType={searchType}
@@ -81,14 +81,18 @@ export default function Search1() {
         onSearchTypeChange={handleSearchTypeChange}
         onSearchSubmit={handleSearchSubmit}
       />
-      
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <SearchResult searchResults={searchResults} />
-      )}
-      <Footer className="text-center" />
+      <div className="flex-grow flex-shrink">
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+          <>
+            {searchResults && (
+              <SearchResult searchResults={searchResults} className="mt-6" />
+            )}
+          </>
+        )}
+      </div>
+      <Footer />
     </div>
-
   );
 }

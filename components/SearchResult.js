@@ -1,9 +1,9 @@
 export default function SearchResult({ searchResults }) {
   return (
-    <div className="container-md flex flex-wrap justify-center mx-10 gap-10 mt-neg-40">
+    <div className="flex flex-wrap justify-center lg:ml-10 lg:mr-10 gap-10">
       {searchResults.length === 0 ? null : (
         searchResults.map((result) => (
-          <div key={result.id} className="card">
+          <div key={result.id} className="card bg-fixed transition duration-300 ease-in-out hover:scale-110">
             {result.images && result.images.length > 0 && (
               <a href={result.external_urls.spotify}>
                 <img src={result.images[0].url} alt={result.name} className="h-[200px] w-[200px] object-cover rounded-t-lg" />
