@@ -45,18 +45,18 @@ function Navbar() {
 
   return (
     <nav className={`top-2 flex justify-between items-start space bg-gradient-to-b to-black ${color} h-40 text-[#E4E4E7] p-8 w-full`}>
-      <Image src={logo} alt="spotify logo" className="w-36 flex flex-row justify-between mb-6" priority={true} />
+      <Image src={logo} alt="spotify logo" className="w-[200px] flex flex-row justify-between mb-10" priority={true} />
 
       <ul className={`main-nav ${!session && loading ? 'loading' : 'loaded'}`}>
         <li className="top-5">
           <div className="relative">
             <button
-              className="flex items-center mt-0 bg-black space-x-3 opacity-90 hover:opacity-80 cursor-pointer rounded-full p-1 pr-2"
+              className="flex items-center mt-2 bg-black space-x-6 opacity-90 hover:opacity-80 cursor-pointer rounded-full p-1 pr-2"
               onClick={handleToggleDropdown}
             >
               {session?.user?.image && (
                 <img
-                  className="rounded-full w-8 h-8"
+                  className="rounded-full w-12 h-12"
                   src={session.user.image}
                   alt=""
                 />
