@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:css": "postcss src/tailwind.css -o static/dist/tailwind.css"
   },
   "dependencies": {
     "@heroicons/react": "^1.0.6",
