@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useSession } from 'next-auth/react';
@@ -18,9 +19,17 @@ export default function Home() {
   }, [loading, session, router]);
 
   return (
-    <div className="flex-1 mx-auto">
-      <Navbar />
-      {/* <Search /> */}
+    <div>
+      <Head>
+        <title>Home | Spotify Search</title>
+        <meta
+          name="description"
+          content="Spotify Search home page"
+        />
+      </Head>
+      <div className="flex-1 mx-auto">
+        <Navbar />
+      </div>
     </div>
   );
 }

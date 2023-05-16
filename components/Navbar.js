@@ -36,18 +36,18 @@ function Navbar({ color }) {
             <li className="top-4">
               <div className="relative">
                 <button
-                  className="flex items-center bg-black space-x-6 opacity-90 hover:opacity-80 cursor-pointer rounded-full p-1 pr-2"
+                  className="flex items-center bg-black space-x-4 opacity-90 hover:opacity-80 cursor-pointer rounded-full p-1 pr-2"
                   onClick={handleToggleDropdown}
                 >
                   {session?.user?.image && (
                     <img
-                      className="rounded-full w-12 h-12"
+                      className="rounded-full w-8 h-8"
                       src={session.user.image}
                       alt=""
                     />
                   )}
                   <h2 className="text-gray-400">{session?.user?.name}</h2>
-                  <FaChevronDown className="h-5 w-5" />
+                  <FaChevronDown className="h-3" style={{ color: "rgb(128, 128, 128)" }}/>
                 </button>
                 {isDropdownOpen && (
                   <div className="absolute right-0 mt-2 py-2 w-38 bg-gray-300 rounded-lg shadow-lg z-10">

@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useSession, getProviders } from 'next-auth/react';
@@ -16,6 +17,13 @@ export default function Login({ providers }) {
 
   return (
     <div>
+      <Head>
+        <title>Log In | Spotify Search</title>
+        <meta
+          name="description"
+          content="User log in with Spotify"
+        />
+      </Head>
       <LoginPage providers={providers} />
     </div>
   );
