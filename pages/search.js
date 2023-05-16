@@ -128,7 +128,7 @@ const SearchPage = () => {
         <Navbar color={color} />
         <div className="h-screen flex flex-col items-center justify-start mt-32 text-center overflow-hidden text-white">
           <div className="z-20">
-            <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px] mb-4 mt-4">
+            <h2 className="text-xs uppercase text-gray-500 pb-2 tracking-[15px] mb-4 mt-4">
               Album * Artist * Playlist
             </h2>
             <h1 className="text-6xl lg:text-6xl font-semibold px-10">
@@ -200,7 +200,7 @@ const SearchPage = () => {
                 {!searchTerm ? (
                   <div className="text-center mb-8">
                     <div className="inline-block">
-                      <h2 className="text-sm mb-0 uppercase text-gray-500 pb-2 tracking-[15px] mt-12 text-center">
+                      <h2 className="text-xs mb-0 uppercase text-gray-500 pb-2 tracking-[15px] mt-12 text-center">
                         No Results Found
                       </h2>
                       <hr className="line mb-10" />
