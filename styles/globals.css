@@ -4,103 +4,16 @@
 
 html,
 body {
+  width: 100%;
+  height: 100vh;
   background-color: black;
   padding: 0;
   margin: 0;
 }
 
-#select {
-  background: #160053;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  width: 300px;
-  padding: 25px 20px;
-  cursor: pointer;
+.color {
+  background-color: var(--color);
 }
-
-h1 {
-  color: #000;
-  text-shadow: 0px 1px 2px rgba(0,255,255,0.5), 
-  0px 2px 4px rgba(0,255,255,0.5), 
-  0px 4px 8px rgba(0,255,255,0.5), 
-  0px 8px 16px rgba(0,255,255,0.5);
-}
-
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.loginpage{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-input {
-  background-color: #0f0f0f;
-  color:rgb(128, 128, 128);
-  margin-right: 200px;
-  cursor: pointer;
-}
-
-input:focus {
-  background-color: #0f0f0f;
-  cursor: pointer;
-  color:rgb(128, 128, 128);
-}
-
-.btn, .button, #search-dropdown {
-  border: none;
-  outline: none;
-  background: #0f0f0f;
-  font-size: 15px;
-  box-shadow: 0px 1px 2px rgba(0,255,255,0.5), 
-              0px 2px 4px rgba(0,255,255,0.5), 
-              0px 4px 8px rgba(0,255,255,0.5), 
-              0px 8px 16px rgba(0,255,255,0.5);
-}
-
-#search-dropdown {
-  background: transparent;
-  color: rgb(128, 128, 128);
-}
-
-#search-dropdown:hover {
-  background: transparent;
-  box-shadow: 0px 1px 2px rgba(0,255,255,0.5), 
-  0px 2px 4px rgba(0,255,255,0.5), 
-  0px 4px 8px rgba(0,255,255,0.5), 
-  0px 8px 16px rgba(0,255,255,0.5);
-}
-
-.btn:hover, .button:hover {
-  background: rgba(0,255,255,0.5);
-  color: #0f0f0f;
-}
-
-.card {
-  max-width: 100%;
-  width: 200px;
-  border: none;
-  outline: none;
-  color: #fff;
-  margin-top: 0;
-  margin: 0;
-  padding:0;
-  background: #0f0f0f;
-  font-size: 15px;
-  box-shadow: 0px 1px 2px rgba(0,255,255,0.5), 
-              0px 2px 4px rgba(0,255,255,0.5), 
-              0px 4px 8px rgba(0,255,255,0.5), 
-              0px 8px 16px rgba(0,255,255,0.5);
-  border-radius: 5px;
-} 
 
 .spotify_logo {
   display: flex;
@@ -123,6 +36,106 @@ input:focus {
   height: 100vh;
 }
 
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  color: #000;
+  text-shadow: 0px 1px 2px rgba(0,255,255,0.5), 
+  0px 2px 4px rgba(0,255,255,0.5), 
+  0px 4px 8px rgba(0,255,255,0.5), 
+  0px 8px 16px rgba(0,255,255,0.5);
+}
+
+input {
+  background-color: #0f0f0f;
+  color:rgb(128, 128, 128);
+  margin-right: 200px;
+  cursor: pointer;
+  transition: ease-in-out;
+}
+
+.btn, .button, #search-dropdown {
+  border: none;
+  outline: none;
+  background: #0f0f0f;
+  font-size: 15px;
+  box-shadow: 0px 1px 2px rgba(0,255,255,0.5), 
+              0px 2px 4px rgba(0,255,255,0.5), 
+              0px 4px 8px rgba(0,255,255,0.5), 
+              0px 8px 16px rgba(0,255,255,0.5);
+}
+
+#search-dropdown {
+  background: transparent;
+  color: rgb(128, 128, 128);
+  transition: ease-in-out;
+}
+
+#search-dropdown:hover {
+  background: transparent;
+  box-shadow: 0px 1px 2px rgba(0,255,255,0.5), 
+  0px 2px 4px rgba(0,255,255,0.5), 
+  0px 4px 8px rgba(0,255,255,0.5), 
+  0px 8px 16px rgba(0,255,255,0.5);
+}
+
+input:focus {
+  background-color: #0f0f0f;
+  cursor: pointer;
+  color:rgb(128, 128, 128);
+}
+
+.btn:hover, .button:hover {
+  background: rgba(0,255,255,0.5);
+  color: #0f0f0f;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-bottom: 20px; /* Add padding-bottom to create space at the bottom of the container */
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.search-results {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.card {
+  max-width: 100%;
+  width: 200px;
+  border: none;
+  outline: none;
+  color: #fff;
+  margin-top: 0;
+  margin: 0;
+  padding:0;
+  background: #0f0f0f;
+  font-size: 12px;
+  box-shadow: 0px 1px 2px rgba(0,255,255,0.5), 
+              0px 2px 4px rgba(0,255,255,0.5), 
+              0px 4px 8px rgba(0,255,255,0.5), 
+              0px 8px 16px rgba(0,255,255,0.5);
+  border-radius: 5px;
+} 
+
+
+
 .line {
   width: 100%;
   font-weight: 4px;
@@ -135,10 +148,6 @@ input:focus {
   0px 8px 16px rgba(0,255,255,0.5);
 }
 
-footer {
-  margin-top: 20rem;
-}
-
 #dropdown-button {
   color: #000;
   text-shadow: 0px 1px 2px rgba(0,255,255,0.5), 
@@ -147,5 +156,29 @@ footer {
   0px 8px 16px rgba(0,255,255,0.5);
 }
 
+.reset-button {
+  background-color: #0f0f0f;
+  cursor: pointer;
+  color:rgb(128, 128, 128);
+  margin-top: 31px;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0px 1px 2px rgba(0,255,255,0.5), 
+  0px 2px 4px rgba(0,255,255,0.5), 
+  0px 4px 8px rgba(0,255,255,0.5), 
+  0px 8px 16px rgba(0,255,255,0.5);
+}
+
+.reset-button:hover {
+  background: rgba(0,255,255,0.5);
+  color: #0f0f0f;
+}
+
+.custom-footer {
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+}
 
 
