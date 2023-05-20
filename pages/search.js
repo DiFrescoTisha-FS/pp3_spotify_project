@@ -58,6 +58,7 @@ const SearchPage = () => {
 
   const handleReset = () => {
     setSearchTerm("");
+    setSearchResults([]);
   };
 
   const handleSearch = async (e) => {
@@ -128,16 +129,16 @@ const SearchPage = () => {
         <Navbar color={color} />
         <div className="h-screen flex flex-col items-center justify-start mt-32 text-center overflow-hidden text-white">
           <div className="z-20">
-            <h2 className="text-xs uppercase text-gray-500 pb-2 tracking-[15px] mb-4 mt-4">
+            <h2 className="text-[12px] lg:text-sm uppercase text-gray-500 pb-2 tracking-[15px] mb-4 mt-4">
               Album * Artist * Playlist
             </h2>
-            <h1 className="lg:text-6xl font-semibold px-10">
+            <h1 className="text-6xl lg:text-7xl font-semibold px-10">
               <span className="mr-3">{text}</span>
               <Cursor cursorColor="#f7abba" />
             </h1>
           </div>
           <div className="flex flex-col items-center justify-center">
-            <div className="container">
+            <div className="search-container">
               <div style={{ display: "flex", alignItems: "center" }}>
                 <form
                   onSubmit={handleSearch}
@@ -196,11 +197,11 @@ const SearchPage = () => {
                   </div>
                 )}
               </div>
-              <div className="search-results min-h-screen">
+              <div className="container">
                 {!searchTerm ? (
                   <div className="text-center mb-8">
                     <div className="inline-block">
-                      <h2 className="text-xs mb-0 uppercase text-gray-500 pb-2 tracking-[15px] mt-12 text-center">
+                      <h2 className="text-[12px] lg:text-sm mb-0 uppercase text-gray-500 pb-2 tracking-[15px] mt-12 text-center">
                         No Results Found
                       </h2>
                       <hr className="line mb-10" />
@@ -210,16 +211,16 @@ const SearchPage = () => {
                   <>
                     <div className="text-center mb-8">
                       <div className="inline-block">
-                        <h2 className="text-xs mb-0 uppercase text-gray-500 pb-2 tracking-[15px] mt-12 text-center">
+                        <h2 className="text-[12px] lg:text-sm mb-0 uppercase text-gray-500 pb-2 tracking-[15px] mt-12 text-center">
                           {resultTitle}: {searchTerm}
                         </h2>
                         <hr className="line mb-10" />
                       </div>
                     </div>
-                    
-                    <div className="search-results-container min-h-screen">
+                    <div className="search-results-container ml-10 mx-auto lg:ml-4 md:ml-20 md:mx-6 sm:mx-4">
+                    <div className="container max-h-[calc(100vh-500px)] overflow-y-auto">
                       {searchResults && (
-                        <div className="section flex flex-wrap justify-start content-center lg:mr-10 gap-10 mb-12">
+                        <div className="section flex flex-wrap justify-start content-center gap-10 mb-12">
                           {searchResults.map((result) => (
                             <div
                               key={result.id}
@@ -254,6 +255,7 @@ const SearchPage = () => {
                           ))}
                         </div>
                       )}
+                      </div>
                     </div>
                   </>
                 )}
