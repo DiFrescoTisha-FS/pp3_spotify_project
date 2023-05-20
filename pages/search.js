@@ -131,7 +131,7 @@ const SearchPage = () => {
             <h2 className="text-xs uppercase text-gray-500 pb-2 tracking-[15px] mb-4 mt-4">
               Album * Artist * Playlist
             </h2>
-            <h1 className="text-6xl lg:text-6xl font-semibold px-10">
+            <h1 className="lg:text-6xl font-semibold px-10">
               <span className="mr-3">{text}</span>
               <Cursor cursorColor="#f7abba" />
             </h1>
@@ -196,7 +196,7 @@ const SearchPage = () => {
                   </div>
                 )}
               </div>
-              <div className="search-results">
+              <div className="search-results min-h-screen">
                 {!searchTerm ? (
                   <div className="text-center mb-8">
                     <div className="inline-block">
@@ -210,14 +210,14 @@ const SearchPage = () => {
                   <>
                     <div className="text-center mb-8">
                       <div className="inline-block">
-                        <h2 className="text-sm mb-0 uppercase text-gray-500 pb-2 tracking-[15px] mt-12 text-center">
+                        <h2 className="text-xs mb-0 uppercase text-gray-500 pb-2 tracking-[15px] mt-12 text-center">
                           {resultTitle}: {searchTerm}
                         </h2>
                         <hr className="line mb-10" />
                       </div>
                     </div>
                     
-                    <div className="search-results-container">
+                    <div className="search-results-container min-h-screen">
                       {searchResults && (
                         <div className="section flex flex-wrap justify-start content-center lg:mr-10 gap-10 mb-12">
                           {searchResults.map((result) => (
