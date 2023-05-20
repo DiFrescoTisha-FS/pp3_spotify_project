@@ -46,7 +46,7 @@ function Navbar({ color }) {
                       alt=""
                     />
                   )}
-                  <h2 className="text-gray-400">{session?.user?.name}</h2>
+                  <h3 className="text-gray-400">{session?.user?.name}</h3>
                   <FaChevronDown className="h-3" style={{ color: "rgb(128, 128, 128)" }}/>
                 </button>
                 {isDropdownOpen && (
