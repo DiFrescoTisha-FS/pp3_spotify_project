@@ -216,6 +216,7 @@ const SearchPage = () => {
                         <hr className="line mb-10" />
                       </div>
                     </div>
+                    
                     <div className="search-results-container">
                       {searchResults && (
                         <div className="section flex flex-wrap justify-start content-center lg:mr-10 gap-10 mb-12">
