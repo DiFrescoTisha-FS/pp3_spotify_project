@@ -2,8 +2,6 @@ import NextAuth from "next-auth";
 import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
 import clientPromise from "../../../lib/mongodb";
 import SpotifyProvider from "next-auth/providers/spotify";
-// import querystring from "querystring";
-// import spotifyApi, { LOGIN_URL } from "../../../lib/spotify";
 
 const SPOTIFY_AUTHORIZATION_URL =
   "https://accounts.spotify.com/authorize?" +
@@ -113,10 +111,4 @@ export default NextAuth({
       return session;
     },
   },
-
-  // secret: process.env.NEXTAUTH_SECRET,
-  // pages: {
-  //   signIn: "/auth/signin",
-  //   signOut: "/"
-  // }
 });

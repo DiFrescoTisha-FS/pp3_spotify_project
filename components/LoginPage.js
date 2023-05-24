@@ -45,7 +45,7 @@ export default function Login({ providers }) {
             className="button_signin py-2 px-4 bg-[#52c18bff] text-black rounded-lg"
             onClick={() => handleSignIn(provider.id)}
           >
-            Login with {provider.name}
+            Log in with {provider.name}
           </button>
         </div>
       ))}
